@@ -9,6 +9,10 @@ import jakarta.persistence.GenerationType;
 @Entity
 @Table(name = "student")
 public class Student {
+	public Student() {
+		super();
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int rollNo; 

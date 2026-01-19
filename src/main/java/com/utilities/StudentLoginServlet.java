@@ -14,15 +14,25 @@ public class StudentLoginServlet extends HttpServlet {
 		int rollNo = Integer.parseInt(request.getParameter("rollNo"));
 		String name = request.getParameter("name");
 		System.out.println(rollNo + " " + name);
+		if(checkDetails(rollNo, name)) {
+			System.out.println("Login success");
+		}
+		else {
+			System.out.println("No user exist");
+		}
 	}
 
 	protected boolean checkDetails(int rollNo,String name) {
-		Configuration configuration=new Configuration();
-		configuration.configure("hibernate.cfg.xml");
+		Configuration configuration=new Configuration().configure("hibernate.cfg.xml");
 		SessionFactory factory=configuration.buildSessionFactory();
-		
-		
-		
+		Session session=factory.openSession();
+		Student s1=session.find(Student.class, rollNo);
+		if(s1!=null && rollNo==s1.getRollNo()) {
+			if(name.equalsIgnoreCase(s1.getName())) {
+				return true;
+			}
+		}
+
 		return false;
 	}
 }
