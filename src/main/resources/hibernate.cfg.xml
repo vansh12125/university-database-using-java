@@ -23,7 +23,7 @@
 
 		<!-- Hibernate Dialect -->
 		<property name="hibernate.dialect">
-			org.hibernate.dialect.MySQL8Dialect
+			org.hibernate.dialect.MySQLDialect
 		</property>
 
 		<!-- Hibernate Behavior -->
@@ -40,7 +40,8 @@
 		</property>
 
 		<!-- Entity Mapping -->
-		<mapping class="com.student.Student" />
+		<mapping class="com.utilities.Student" />
+		<mapping class="com.utilities.Course" />
 
 	</session-factory>
 </hibernate-configuration>
