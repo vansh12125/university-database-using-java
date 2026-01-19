@@ -17,8 +17,17 @@ public class Student {
 		return rollNo;
 	}
 	
+	@Override
+	public String toString() {
+		return "Student [rollNo=" + rollNo + ", name=" + name + ", course=" + course + ", city=" + city + "]";
+	}
+
 	private String course;
 	private String city;
+	
+	public Student() {
+		
+	}
 	
 	public Student(String name, String course, String city) {
 		super();

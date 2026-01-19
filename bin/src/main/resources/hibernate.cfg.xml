@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
 	<session-factory>
@@ -20,14 +18,13 @@
 		</property>
 
 		<property name="hibernate.connection.password">
-			12345
+			12125
 		</property>
 
 		<!-- Hibernate Dialect -->
 		<property name="hibernate.dialect">
-    org.hibernate.dialect.MySQLDialect
-</property>
-
+			org.hibernate.dialect.MySQL8Dialect
+		</property>
 
 		<!-- Hibernate Behavior -->
 		<property name="hibernate.hbm2ddl.auto">
@@ -43,7 +40,7 @@
 		</property>
 
 		<!-- Entity Mapping -->
-		<mapping class="com.utilities.Student" />
+		<mapping class="com.student.Student" />
 
 	</session-factory>
 </hibernate-configuration>

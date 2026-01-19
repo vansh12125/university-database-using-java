@@ -17,11 +17,16 @@ public class StudentLoginServlet extends HttpServlet {
 	}
 
 	protected boolean checkDetails(int rollNo,String name) {
-		Configuration configuration=new Configuration();
-		configuration.configure("hibernate.cfg.xml");
+		Configuration configuration=new Configuration().configure("hibernate.cfg.xml");
 		SessionFactory factory=configuration.buildSessionFactory();
-		
-		
+		Session session=factory.openSession();
+		Student s1=session.find(Student.class, rollNo);
+		if(rollNo==s1.getRollNo()) {
+			if(name.equalsIgnoreCase(s1.getName())) {
+				return true;
+			}
+		}
+
 		
 		return false;
 	}
