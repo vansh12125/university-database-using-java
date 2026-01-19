@@ -6,6 +6,7 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+hibernate.cfg.xmls
 .mvn/timing.properties
 # https://maven.apache.org/wrapper/#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
