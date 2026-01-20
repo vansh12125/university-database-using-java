@@ -58,4 +58,13 @@ public class NoticeManager {
 		session.close();
 		return notices;
 	}
+	
+	public List<Notice> getAllNotices() {
+		Session session = AdminFactory.getSession();
+		String hql = "FROM Notice";
+		Query<Notice> query = session.createQuery(hql, Notice.class);
+		List<Notice> notices = query.list();
+		session.close();
+		return notices;
+	}	
 }

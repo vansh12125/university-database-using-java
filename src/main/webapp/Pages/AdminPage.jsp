@@ -190,7 +190,7 @@ to {
 			<div class="card">
 				<h4>Attendance Management</h4>
 				<p>Mark and review student attendance records.</p>
-				<a href="#">Manage Attendance</a>
+				<a href="courseForm.jsp">Manage Attendance</a>
 			</div>
 
 			<div class="card">

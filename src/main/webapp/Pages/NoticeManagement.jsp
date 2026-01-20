@@ -9,7 +9,7 @@ if (session.getAttribute("admin") == null) {
 }
 
 NoticeManager manager = new NoticeManager();
-List<Notice> notices = manager.getNoticesByCourse("BCA");
+List<Notice> notices = manager.getAllNotices();
 %>
 
 <!DOCTYPE html>
