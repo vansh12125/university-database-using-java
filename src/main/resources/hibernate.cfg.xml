@@ -42,6 +42,7 @@
 		<!-- Entity Mapping -->
 		<mapping class="com.utilities.Student" />
 		<mapping class="com.utilities.Course" />
+		<mapping class="com.utilities.Notice" />
 
 	</session-factory>
 </hibernate-configuration>
