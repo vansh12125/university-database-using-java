@@ -18,7 +18,7 @@
 		</property>
 
 		<property name="hibernate.connection.password">
-			12345
+			12125
 		</property>
 
 		<!-- Hibernate Dialect -->

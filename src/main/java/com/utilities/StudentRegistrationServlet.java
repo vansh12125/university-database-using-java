@@ -41,7 +41,7 @@ public class StudentRegistrationServlet extends HttpServlet {
 		rd.forward(request, response);
 	}
 
-	private static SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+	public static SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
 	private int registerUser(Student student) {
 
