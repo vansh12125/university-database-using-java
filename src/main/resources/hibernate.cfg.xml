@@ -43,6 +43,7 @@
 		<mapping class="com.utilities.Student" />
 		<mapping class="com.utilities.Course" />
 		<mapping class="com.utilities.Notice" />
+		<mapping class="com.admin.AdminDatabase"/>
 
 	</session-factory>
 </hibernate-configuration>

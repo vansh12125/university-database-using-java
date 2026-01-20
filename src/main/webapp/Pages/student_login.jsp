@@ -113,6 +113,26 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 input[type=number] {
 	-moz-appearance: textfield;
 }
+
+.admin-btn {
+	display: block;
+	margin: 12px auto 0;
+	padding: 8px 14px;
+	width: fit-content;
+	font-size: 13px;
+	text-decoration: none;
+	color: white;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background: #4e7dd4;
+	transition: all 0.3s ease;
+}
+
+.admin-btn:hover {
+	background: #333;
+	color: #fff;
+	border-color: #333;
+}
 </style>
 </head>
 <body>
@@ -121,7 +141,8 @@ input[type=number] {
 		<h2>Student Login</h2>
 		<p>Login using your Roll Number & Name</p>
 
-		<form action="${pageContext.request.contextPath}/studentLogin" method="post">
+		<form action="${pageContext.request.contextPath}/studentLogin"
+			method="post">
 			<div class="form-group">
 				<label>Roll Number</label> <input type="number" name="rollNo"
 					placeholder="Enter your roll number" required>
@@ -134,6 +155,9 @@ input[type=number] {
 
 			<button type="submit" class="login-btn">Login</button>
 		</form>
+
+		<a href="${pageContext.request.contextPath}/Pages/adminLogin.jsp"
+			class="admin-btn"> Login as Admin </a>
 
 		<div class="footer-text">
 			Back to <a href="../index.html">Home</a>
