@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.utilities.Student"%>
+<%@ page import="com.utilities.Student,com.utilities.Notice"%>
+<%@ page import="com.admin.NoticeManager,java.util.List"%>
 
 <%
 response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -151,6 +152,8 @@ body {
 <body>
 	<%
 	if (loggedIn) {
+		NoticeManager noticeManager = new NoticeManager();
+		List<Notice> notices = noticeManager.getNoticesByCourse(student.getCourse());
 	%>
 
 	<div class="container dashboard-container">
@@ -274,9 +277,25 @@ body {
 						<strong>Important:</strong> Campus will be closed on Monday due to
 						holiday.
 					</div>
-					<div class="alert alert-warning">
-						<strong>Reminder:</strong> Library books are due by end of week.
+					<%
+					if (notices != null && !notices.isEmpty()) {
+						for (Notice notice : notices) {
+					%><div class="alert alert-warning alert-dismissible fade show">
+						<strong><%=notice.getNoticeTitle()%></strong><br>
+						<%=notice.getNoticeDescription()%>
+						<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 					</div>
+
+					<%
+					}
+					} else {
+					%>
+					<div class="alert alert-success">
+						<strong>No new notices 🎉</strong>
+					</div>
+					<%
+					}
+					%>
 				</div>
 			</div>
 		</div>

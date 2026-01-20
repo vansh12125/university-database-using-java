@@ -9,12 +9,18 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "notices")
 public class Notice {
+	@Override
+	public String toString() {
+		return "Notice [noticeId=" + noticeId + ", noticeTitle=" + noticeTitle + ", noticeDescription="
+				+ noticeDescription + ", course=" + course + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int noticeId;
 	private String noticeTitle;
 	private String noticeDescription;
-	private String courseString;
+	private String course;
 	
 	public String getNoticeTitle() {
 		return noticeTitle;
@@ -28,21 +34,21 @@ public class Notice {
 	public void setNoticeDescription(String noticeDescription) {
 		this.noticeDescription = noticeDescription;
 	}
-	public String getCourseString() {
-		return courseString;
+	public String getCourse() {
+		return course;
 	}
-	public void setCourseString(String courseString) {
-		this.courseString = courseString;
+	public void setCourse(String courseString) {
+		this.course = courseString;
 	}
 	public int getNoticeId() {
 		return noticeId;
 	}
 	
-	public Notice(String noticeTitle, String noticeDescription, String courseString) {
+	public Notice(String noticeTitle, String noticeDescription, String course) {
 		super();
 		this.noticeTitle = noticeTitle;
 		this.noticeDescription = noticeDescription;
-		this.courseString = courseString;
+		this.course = course;
 	}
 	
 	public Notice() {
