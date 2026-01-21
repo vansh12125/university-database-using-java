@@ -156,8 +156,7 @@ to {
 
 	<!-- HEADER -->
 	<div class="header">
-		Admin Dashboard <a
-			href="${pageContext.request.contextPath}/logout"
+		Admin Dashboard <a href="${pageContext.request.contextPath}/logout"
 			class="logout-btn"> Logout </a>
 	</div>
 
@@ -190,7 +189,9 @@ to {
 			<div class="card">
 				<h4>Attendance Management</h4>
 				<p>Mark and review student attendance records.</p>
-				<a href="courseForm.jsp">Manage Attendance</a>
+				<a href="SelectAttendance.jsp"> Manage
+					Attendance </a>
+
 			</div>
 
 			<div class="card">
