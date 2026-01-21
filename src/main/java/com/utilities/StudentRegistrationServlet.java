@@ -41,15 +41,13 @@ public class StudentRegistrationServlet extends HttpServlet {
 		rd.forward(request, response);
 	}
 
-	public static SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-
 	private int registerUser(Student student) {
 
 		Session session = null;
 		Transaction tx = null;
 
 		try {
-			session = factory.openSession();
+			session = StudentFactory.getSession();
 			tx = session.beginTransaction();
 
 			Course course = session.createQuery("from Course where courseName = :name", Course.class)

@@ -147,6 +147,63 @@ body {
 .sidebar a:hover {
 	background: #f8f9fa;
 }
+
+.student-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-header-custom {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header-custom h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.student-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f9f9fb;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.detail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.detail i {
+    font-size: 1.8rem;
+    color: #667eea;
+}
+
+.detail span {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.detail strong {
+    display: block;
+    font-size: 1.05rem;
+    color: #333;
+}
 </style>
 </head>
 <body>
@@ -167,6 +224,64 @@ body {
 				<p class="text-muted">Student Dashboard</p>
 			</div>
 		</div>
+
+		<!-- Student Information Card -->
+		<div class="dashboard-card student-card">
+			<div class="card-header-custom">
+				<h5>
+					<i class="fas fa-user-graduate"></i> Student Profile
+				</h5>
+				<a href="<%=request.getContextPath()%>/view-attendance"
+					class="btn btn-sm btn-primary"> <i
+					class="fas fa-calendar-check"></i> View Attendance
+				</a>
+			</div>
+
+			<div class="student-details">
+				<div class="detail">
+					<i class="fas fa-id-badge"></i>
+					<div>
+						<span>Roll Number</span> <strong><%=student.getRollNo()%></strong>
+					</div>
+				</div>
+
+				<div class="detail">
+					<i class="fas fa-user"></i>
+					<div>
+						<span>Name</span> <strong><%=student.getName()%></strong>
+					</div>
+				</div>
+
+				<div class="detail">
+					<i class="fas fa-venus-mars"></i>
+					<div>
+						<span>Gender</span> <strong><%=student.getGender()%></strong>
+					</div>
+				</div>
+
+				<div class="detail">
+					<i class="fas fa-layer-group"></i>
+					<div>
+						<span>Course</span> <strong><%=student.getCourse()%></strong>
+					</div>
+				</div>
+
+				<div class="detail">
+					<i class="fas fa-hourglass-half"></i>
+					<div>
+						<span>Age</span> <strong><%=student.getAge()%></strong>
+					</div>
+				</div>
+
+				<div class="detail">
+					<i class="fas fa-city"></i>
+					<div>
+						<span>City</span> <strong><%=student.getCity()%></strong>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 		<div class="row">
 			<!-- Sidebar -->

@@ -26,9 +26,7 @@ public class StudentLoginServlet extends HttpServlet {
 	}
 
 	protected Student checkDetails(int rollNo, String name) {
-		Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
-		SessionFactory factory = configuration.buildSessionFactory();
-		Session session = factory.openSession();
+		Session session = StudentFactory.getSession();
 		Student s1 = session.find(Student.class, rollNo);
 		if (s1 != null && rollNo == s1.getRollNo()) {
 			if (name.equalsIgnoreCase(s1.getName())) {
