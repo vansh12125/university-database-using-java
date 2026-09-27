@@ -1,4 +1,5 @@
 # 🎓 University Database Management System (Java)
+Test
 
 A **college-level University Database Management System** built using **Java, Servlet, JSP, Hibernate, and MySQL**.
 This project demonstrates a **clean MVC architecture**, modern UI pages, and proper database interaction using Hibernate ORM.
